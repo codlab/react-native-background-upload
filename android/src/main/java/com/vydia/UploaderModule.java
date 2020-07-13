@@ -306,6 +306,16 @@ public class UploaderModule extends ReactContextBaseJavaModule implements Lifecy
     }
   }
 
+  @ReactMethod
+  public void stop(final Promise promise) {
+    try {
+      UploadService.stop(reactContext, true);
+      promise.resolve(true);
+    } catch (Exception e) {
+      promise.reject(e);
+    }
+  }
+
   @Override
   public void onHostResume() {
     if (uploadReceiver != null) {
