@@ -124,4 +124,4 @@ export const addListener = (
   });
 };
 
-export default { startUpload, cancelUpload, addListener, getFileInfo };
+export default { startUpload, cancelUpload, addListener, getFileInfo, stop };
